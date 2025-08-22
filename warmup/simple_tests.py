@@ -1,8 +1,8 @@
-import warmup
+import simple
 
 tests = [
     {
-        'function': warmup.check_if_symmetric,
+        'function': simple.check_if_symmetric,
         'unpack': False,
         'cases': [
             {'input': None, 'output': True},
@@ -15,7 +15,7 @@ tests = [
         ]
     },
     {
-        'function': warmup.convert_to_numbers,
+        'function': simple.convert_to_numbers,
         'unpack': False,
         'cases': [
             {'input': 'abc', 'output': [1, 2, 3]},
@@ -24,7 +24,7 @@ tests = [
         ]
     },
     {
-        'function': warmup.convert_to_letters,
+        'function': simple.convert_to_letters,
         'unpack': False,
         'cases': [
             {'input': [1, 2, 3], 'output': 'abc'},
@@ -34,7 +34,7 @@ tests = [
         ]
     },
     {
-        'function': warmup.get_intersection,
+        'function': simple.get_intersection,
         'unpack': True,
         'cases': [
             {'input': ([1, 2, 3], [2, 3, 4]), 'output': [2, 3]},
@@ -42,7 +42,7 @@ tests = [
         ]
     },
     {
-        'function': warmup.get_union,
+        'function': simple.get_union,
         'unpack': True,
         'cases': [
             {'input': ([1, 2, 3], [2, 3, 4]), 'output': [1, 2, 3, 4]},
@@ -51,7 +51,7 @@ tests = [
         ]
     },
     {
-        'function': warmup.count_characters,
+        'function': simple.count_characters,
         'unpack': False,
         'cases': [
             {'input': 'aabbc', 'output': {'a': 2, 'b': 2, 'c': 1}},
@@ -59,7 +59,7 @@ tests = [
         ]
     },
     {
-        'function': warmup.is_prime,
+        'function': simple.is_prime,
         'unpack': False,
         'cases': [
             {'input': 2, 'output': True},
@@ -72,7 +72,7 @@ tests = [
     }
 ]
 
-print("Running tests for warmup.py ...\n")
+print("Running tests for simple.py ...\n")
 
 for function_tests in tests:
     success = 0
