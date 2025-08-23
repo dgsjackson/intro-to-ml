@@ -14,20 +14,22 @@ def decode_numbers(numbers, a, b):
         return simple.convert_to_letters(decoded_ints)
     return False
 
-encoded_message = [377, 717, 71,
+
+if (__name__ == "__main__"):
+    encoded_message = [377, 717, 71,
     513, 105, 921, 581, 547, 547, 105, 377, 717,
     241, 71, 105, 547, 71, 377, 547, 717, 751, 683,
     785, 513, 241, 547, 751]
 
-messages = []
-parameters = []
+    messages = []
+    parameters = []
 
-for a in range(1, 101):
-    for b in range(0, 101):
-        decode = decode_numbers(encoded_message, a, b)
-        if decode != False:
-            messages.append(decode)
-            parameters.append((a, b))
+    for a in range(1, 101):
+        for b in range(0, 101):
+            decode = decode_numbers(encoded_message, a, b)
+            if decode != False:
+                messages.append(decode)
+                parameters.append((a, b))
 
-print(messages)
-print(parameters)
+    print(messages)
+    print(parameters)
