@@ -1,5 +1,5 @@
 import pytest
-import cartesian_product
+from warmup import cartesian_product
 
 @pytest.mark.parametrize("ranges, output", [
     ([[1], [2]], [[1, 2]]),

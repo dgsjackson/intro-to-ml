@@ -1,4 +1,4 @@
-import simple
+from warmup import simple
 
 tests = [
     {

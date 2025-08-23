@@ -1,4 +1,4 @@
-import recursive_sequences
+from warmup import recursive_sequences
 import pytest
 
 @pytest.mark.parametrize("n,output", [
