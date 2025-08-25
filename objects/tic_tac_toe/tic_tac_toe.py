@@ -65,7 +65,7 @@ class Game():
         if self._is_player_winner(self.current_player):
             return self.current_player
         
-        if (all(self.board[i][j] != "." for i in range(3) for j in range(3))):
+        if self._is_draw():
             # 0 means draw
             return 0
 
@@ -83,6 +83,9 @@ class Game():
         if all(self.board[i][2 - i] == player for i in range(3)):
             return True
         return False
+    
+    def _is_draw(self):
+        return all(self.board[i][j] != "." for i in range(len(self.board)) for j in range(len(self.board[0])))
     
     def _print_board(self):
         for row in self.board:
