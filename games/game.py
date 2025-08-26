@@ -49,16 +49,7 @@ class Game():
 
 
     def _process_move(self, move):
-        #if the move is invalid, they lose their turn
-        if (move != None
-            and move[0] in [0, 1, 2] 
-            and move[1] in [0, 1, 2] 
-            and self.board[move[0]][move[1]] == "."):
-            if (self.log): print("The move was valid")
-            self.board[move[0]][move[1]] = self.current_player
-            self._print_board()
-        else:
-            if (self.log): print("The move was invalid")
+        raise NotImplementedError()
 
     
     def _check_result(self):
@@ -72,24 +63,15 @@ class Game():
         return None
 
     def _is_player_winner(self, player):
-        for row in self.board:
-            if all(map(lambda x: x == player, row)):
-                return True
-        for i in range(3):
-            if all(map(lambda x: x[i] == player, self.board)):
-                return True
-        if all(self.board[i][i] == player for i in range(3)):
-            return True
-        if all(self.board[i][2 - i] == player for i in range(3)):
-            return True
-        return False
+        raise NotImplementedError()
     
     def _is_draw(self):
         return all(self.board[i][j] != "." for i in range(len(self.board)) for j in range(len(self.board[0])))
     
     def _print_board(self):
         for row in self.board:
-            print(row)
+            output = "| " + " ".join(map(lambda x: str(x), row)) + " |"
+            print(output)
 
     def _format_move(self, move):
-        return move[0] + 1, move[1] + 1
+        raise NotImplementedError()

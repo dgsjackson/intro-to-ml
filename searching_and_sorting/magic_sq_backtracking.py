@@ -1,5 +1,4 @@
 digits = [1, 2, 3, 4, 5, 6, 7, 8, 9]
-square = [[0] * 3] * 3
 chosen = []
 
 def is_valid(square):
