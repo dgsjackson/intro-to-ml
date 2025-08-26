@@ -1,13 +1,13 @@
 import matplotlib.pyplot as plt
 
 #multivariable euler estimator
-#point = (t, {a: a(t), b: b(t), ... })
 class MultiEulerEstimator():
 
     #derivatives = { 'a': da_dt, 'b': db_dt, ... }
     def __init__(self, derivatives):
         self.derivatives = derivatives
 
+    #point = (t, {a: a(t), b: b(t), ... })
     def estimate_points(self, initial_point, step_size, num_steps):
         points = [ initial_point ]
         current_point = initial_point
@@ -26,16 +26,16 @@ class MultiEulerEstimator():
         return result
 
 if __name__ == "__main__":
-    initial_point = (-0.4, {'a': -0.45 , 'b': -0.05 , 'c': 0})
+    initial_point = (-0.4, {"a": -0.45 , "b": -0.05 , "c": 0})
 
     def da_dt(point):
-        return point[1]['a'] + 1
+        return point[1]["a"] + 1
     
     def db_dt (point):
-        return point[1]['a'] + point[1]['b']
+        return point[1]["a"] + point[1]["b"]
     
     def dc_dt (point):
-        return 2*point[1]['b'] + 3*point[0]
+        return 2*point[1]["b"] + 3*point[0]
     
     derivatives = { "a": da_dt, "b": db_dt, "c": dc_dt }
 
