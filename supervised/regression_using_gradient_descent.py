@@ -16,9 +16,9 @@ def power_rss(params):
         rss += (a*x**b - y)**2
     return rss
 
-def power_drss(point):
+def power_drss(params):
     grad = [0, 0]
-    a, b = point
+    a, b = params
     for x, y in data:
         common = 2*(a*x**b - y) * x**b
         da = common
@@ -126,7 +126,7 @@ def drss_f4(params):
         drss_da = common * math.sin(b*x)
         drss_db = common * a*x*math.cos(b*x)
         drss_dc = common * math.sin(d*x)
-        drss_dd = common * c*x*math.cos(d*x)
+        drss_dd = common * c*x*math.cos(d*x)   
         grad[0] += drss_da
         grad[1] += drss_db
         grad[2] += drss_dc
